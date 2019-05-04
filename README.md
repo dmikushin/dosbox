@@ -45,6 +45,7 @@ this guide: https://www.vogons.org/viewtopic.php?t=8933
 
 # Start (FAQ)
 
+```
 START:      How to start?
 AUTOMATION: Do I always have to type these "mount" commands?
 FULLSCREEN: How do I change to fullscreen?
@@ -66,10 +67,10 @@ GAME:       My Build game(Duke3D/Blood/Shadow Warrior) has problems.
 SAFETY:     Can DOSBox harm my computer?
 OPTIONS:    I would like to change DOSBox's options.
 HELP:       Great Manual, but I still don't get it.
+```
 
 
-
-START: How to start?
+## START: How to start?
     At the beginning you've got a Z:\> instead of a C:\> at the prompt.
     You have to make your directories available as drives in DOSBox by using
     the "mount" command. For example, in Windows "mount C D:\GAMES" will give
@@ -80,13 +81,13 @@ START: How to start?
     fine, DOSBox will display the prompt "C:\>".
 
 
-AUTOMATION: Do I always have to type these commands?
+## AUTOMATION: Do I always have to type these commands?
     In the DOSBox configuration file is an [autoexec] section. The commands
     present there are run when DOSBox starts, so you can use this section
     for the mounting. Look at Section 13: "The configuration (options) file".
 
 
-FULLSCREEN: How do I change to fullscreen?
+## FULLSCREEN: How do I change to fullscreen?
     Press alt-enter. Alternatively: Edit the configuration file of DOSBox and
     change the option fullscreen=false to fullscreen=true. If fullscreen looks
     wrong in your opinion: Play with the options: fullresolution, output and
@@ -94,7 +95,7 @@ FULLSCREEN: How do I change to fullscreen?
     mode: Press alt-enter again.
 
 
-FULLSCREEN: My fullscreen is too large.
+## FULLSCREEN: My fullscreen is too large.
     This is can be a problem on Windows 10, if you have display scaling
     set to a value above 100%. Windows in that case will resize the screen
     on top of dosbox resizing the screen, which can happen for the output:
@@ -114,7 +115,7 @@ FULLSCREEN: My fullscreen is too large.
     Alternatively, you can disable the display scaling and or use a lower
     fullresolution value.
 
-CD-ROM: My CD-ROM doesn't work.
+## CD-ROM: My CD-ROM doesn't work.
     To mount your CD-ROM in DOSBox you have to specify some additional options
     when mounting the CD-ROM.
     To enable CD-ROM support (includes MSCDEX) in Windows:
@@ -146,7 +147,7 @@ CD-ROM: My CD-ROM doesn't work.
     See also the next question: The game/application can't find its CD-ROM.
 
 
-CD-ROM: The game/application can't find its CD-ROM.
+## CD-ROM: The game/application can't find its CD-ROM.
     Be sure to mount the CD-ROM with -t cdrom switch, this will enable the
     MSCDEX interface required by DOS games to interface with CD-ROMs.
     Also try adding the correct label (-label LABEL) to the mount command,
@@ -161,14 +162,14 @@ CD-ROM: The game/application can't find its CD-ROM.
     This enables very good low-level CD-ROM support on any operating system.
 
 
-MOUSE: The mouse doesn't work.
+## MOUSE: The mouse doesn't work.
     Usually, DOSBox detects when a game uses mouse control. When you click on
     the screen it should get locked (confined to the DOSBox window) and work.
     With certain games, the DOSBox mouse detection doesn't work. In that case
     you will have to lock the mouse manually by pressing CTRL-F10.
 
 
-SOUND: There is no sound.
+## SOUND: There is no sound.
     Be sure that the sound is correctly configured in the game. This might be
     done during the installation or with a setup/setsound utility that
     accompanies the game. First see if an autodetection option is provided. If
@@ -186,7 +187,7 @@ SOUND: There is no sound.
     the Gravis Ultrasound (gus=true).
 
 
-SOUND: What sound hardware does DOSBox presently emulate?
+## SOUND: What sound hardware does DOSBox presently emulate?
     DOSBox emulates several legacy sound devices:
     - Internal PC speaker/Buzzer
       This emulation includes both the tone generator and several forms of
@@ -228,7 +229,7 @@ SOUND: What sound hardware does DOSBox presently emulate?
       Roland LAPC/CM-32L/MT-32 compatibility.
 
 
-SOUND: The sound stutters or sounds stretched/weird.
+## SOUND: The sound stutters or sounds stretched/weird.
     You may be using too much CPU power to keep DOSBox running at the current
     speed. You can lower the cycles, skip frames, reduce the sampling rate of
     the respective sound device, increase the prebuffer. See Section 13: "The
@@ -239,7 +240,7 @@ SOUND: The sound stutters or sounds stretched/weird.
     Section 11: "Troubleshooting".
 
 
-KEYBOARD: I can't type \ or : in DOSBox.
+## KEYBOARD: I can't type \ or : in DOSBox.
     This can happen in various cases, like your host keyboard layout does not
     have a matching DOS layout representation (or it was not correctly
     detected), or the key mapping is wrong.
@@ -258,7 +259,7 @@ KEYBOARD: I can't type \ or : in DOSBox.
     "enter" and "L".
 
 
-KEYBOARD: Right Shift and "\" doesn't work in DOSBox. (Windows only)
+## KEYBOARD: Right Shift and "\" doesn't work in DOSBox. (Windows only)
     This may happen if Windows thinks that you have more than one keyboard
     connected to your PC when you use some remote control devices.
     To verity this problem run cmd.exe, navigate to DOSBox program folder
@@ -270,13 +271,13 @@ KEYBOARD: Right Shift and "\" doesn't work in DOSBox. (Windows only)
     https://www.vogons.org/viewtopic.php?t=24072
 
 
-KEYBOARD: The keyboard lags.
+## KEYBOARD: The keyboard lags.
     Lower the priority setting in the DOSBox configuration file, for example
     set "priority=normal,normal". You might also want to try lowering the
     cycles (use a fixed cycle amount to start with, like cycles=10000).
 
 
-CONTROL: The character/cursor/mouse pointer always moves into one direction!
+## CONTROL: The character/cursor/mouse pointer always moves into one direction!
     See if it still happens if you disable the joystick emulation,
     set joysticktype=none in the [joystick] section of your DOSBox
     configuration file. Maybe also try unplugging any joystick/gamepad.
@@ -285,20 +286,20 @@ CONTROL: The character/cursor/mouse pointer always moves into one direction!
     in the game or the game's setup program).
 
 
-SPEED: The game/application runs much too slow/too fast!
+## SPEED: The game/application runs much too slow/too fast!
     Look at Section 10: "How to speed up/slow down DOSBox" for more
     information.
 
 
-CRASH: The game/application does not run at all/crashes!
+## CRASH: The game/application does not run at all/crashes!
     Look at Section 11: "Troubleshooting".
 
 
-CRASH: DOSBox crashes on startup!
+## CRASH: DOSBox crashes on startup!
     Look at Section 11: "Troubleshooting".
 
 
-GAME: My Build game(Duke3D/Blood/Shadow Warrior) has problems.
+## GAME: My Build game(Duke3D/Blood/Shadow Warrior) has problems.
     First of all, try to find a port of the game. Those will offer a better
     experience. To fix the graphics problem that occurs in DOSBox on higher
     resolutions: Open the configuration file of DOSBox and search for
@@ -306,18 +307,18 @@ GAME: My Build game(Duke3D/Blood/Shadow Warrior) has problems.
     Change memsize=16 to memsize=63
 
 
-SAFETY: Can DOSBox harm my computer?
+## SAFETY: Can DOSBox harm my computer?
     DOSBox can not harm your computer more than any other resource demanding
     program. Increasing the cycles does not overclock your real CPU.
     Setting the cycles too high has a negative performance effect on the
     software running inside DOSBox.
 
 
-OPTIONS: I would like to change DOSBox's options.
+## OPTIONS: I would like to change DOSBox's options.
     Look at Section 13: "The configuration (options) file".
 
 
-HELP: Great Manual, but I still don't get it.
+## HELP: Great Manual, but I still don't get it.
     For more questions read the rest of this Manual. You may also look at:
     guides located at https://www.vogons.org/viewforum.php?f=53
     the wiki of DOSBox https://www.dosbox.com/wiki/
@@ -340,6 +341,7 @@ To be able to use Command Line Parameters:
 The options are valid for all operating systems unless noted in the option
 description:
 
+```
 dosbox [name] [-exit] [-c command] [-fullscreen] [-userconf]
        [-conf congfigfilelocation] [-lang languagefilelocation]
        [-machine machine type] [-noconsole] [-startmapper] [-noautoexec]
@@ -442,6 +444,7 @@ dosbox -erasemapper
   -socket
         passes the socket number to the nullmodem emulation. See Section 9:
         "Serial Multiplayer feature."
+```
 
 Note: If a name/command/configfilelocation/languagefilelocation contains
      a space, put the whole name/command/configfilelocation/languagefilelocation
@@ -469,6 +472,7 @@ To get a list of the internal commands type "HELP" at the prompt.
 
 In addition, the following commands are available:
 
+```
 MOUNT "Emulated Drive letter" "Real Drive or Directory"
       [-t type] [-aspi] [-ioctl] [-noioctl] [-usecd number] [-size drivesize]
       [-label drivelabel] [-freesize size_in_mb]
@@ -1053,7 +1057,7 @@ KEYB [keyboardlayoutcode [codepage [codepagefile]]]
        This can be used to change the codepage for the FreeDOS keyb2 utility.
     5. To display the current codepage and, if loaded, the keyboard layout:
          keyb
-
+```
 
 
 For more information use the /? command line switch with the programs.
@@ -1062,6 +1066,7 @@ For more information use the /? command line switch with the programs.
 
 # Special Keys
 
+```
 ALT-ENTER     Switch to full screen and back.
 ALT-PAUSE     Pause emulation (hit ALT-PAUSE again to continue).
 CTRL-F1       Start the keymapper.
@@ -1082,6 +1087,7 @@ ALT-F12       Unlock speed (turbo button/fast forward)**.
 CTRL-ALT-HOME Restart DOSBox.
 F11, ALT-F11  (machine=cga) change tint in NTSC output modes***.
 F11           (machine=hercules) cycle through amber, green, white colouring***.
+```
 
 *NOTE: Once you increase your DOSBox cycles beyond your computer CPU resources,
        it will produce the same effect as slowing down the emulation.
@@ -1118,6 +1124,7 @@ To force DOSBox to use a different type of emulated joystick/gamepad, the entry
 "joysticktype" in the [joystick] section of the DOSBox configuration file can
 be used.
 
+```
 none  - disables controller support.
 auto  - (default) autodetects whether you have one or two controllers connected:
           if you have one - '4axis' setting is used,
@@ -1133,6 +1140,7 @@ fcs   - supports only first controller, emulates ThrustMaster
 ch    - supports only first controller, emulates CH Flightstick,
         with 4-axes, 6 buttons and 1 hat, but you cannot press more
         than one button at the same time.
+```
 
 You also have to configure controller properly inside the game.
 It is important to remember that if you saved the mapperfile without joystick
@@ -1155,6 +1163,7 @@ report to the DOS applications. If you click on a button with your mouse,
 you can see in the lower left corner with which event it is associated
 (EVENT) and to what events it is currently bound.
 
+```
 Event: EVENT
 BIND: BIND (the real key/button/axis you push with your finger/hand)
 
@@ -1201,7 +1210,7 @@ Q3. If you try it out in DOSBox, you will notice that pressing X makes ZX
      A. The X on your keyboard is still mapped to the X as well! Click on
         the X in the keyboard mapper and search with "Next" until you find the
         mapped key X. Click "Del".
-
+```
 
 Examples of remapping the joystick:
   You have a joystick attached, it is working fine under DOSBox and you
@@ -1311,6 +1320,7 @@ as multiplayer method on COM1. Set the same baudrate on both computers.
 Furthermore, additional parameters can be specified to control the behavior
 of the nullmodem connection. These are all parameters:
 
+```
  * port:         - TCP port number. Default: 23
  * rxdelay:      - how long (milliseconds) to delay received data if the
                    interface is not ready. Increase this value if you encounter
@@ -1329,6 +1339,7 @@ of the nullmodem connection. These are all parameters:
  * inhsocket:1   - Use a socket passed to DOSBox by command line. Automatically
                    sets transparent. (Socket Inheritance: It is used for
                    playing old DOS door games on new BBS software.)
+```
 
 Example: Be a server listening on TCP port 5000.
    serial1=nullmodem server:<IP or name of the server> port:5000 rxdelay:1000
@@ -1342,7 +1353,7 @@ of a PC, all at the same time. The speed of an emulated DOS application
 depends on how many instructions can be emulated, which is adjustable
 (number of cycles).
 
-CPU Cycles (speed up/slow down)
+## CPU Cycles (speed up/slow down)
   By default (cycles=auto) DOSBox tries to detect whether a game needs to
   be run with as many instructions emulated per time interval as possible
   (cycles=max, sometimes this results in game working too fast or unstable),
@@ -1372,7 +1383,7 @@ CPU Cycles (speed up/slow down)
   100% of your real CPU's one core. In this mode you can reduce the amount
   of your real CPU's core usage by CTRL-F11 or raise it with CTRL-F12.
 
-CPU Core (speed up)
+## CPU Core (speed up)
   On x86 architectures you can try to force the usage of a dynamically
   recompiling core (set core=dynamic in the DOSBox configuration file).
   This usually gives better results if the auto detection (core=auto) fails.
@@ -1381,7 +1392,7 @@ CPU Core (speed up)
   games that work worse/crash with the dynamic core (so save your game often),
   or do not work at all!
 
-Graphics emulation (speed up)
+## Graphics emulation (speed up)
   VGA emulation is a demanding part of DOSBox in terms of actual CPU usage.
   Increase the number of frames skipped (in increments of one) by pressing
   CTRL-F8. Your CPU usage should decrease when using a fixed cycle setting,
@@ -1390,7 +1401,7 @@ Graphics emulation (speed up)
   Please note that this is a trade-off: you lose in fluidity of video what
   you gain in speed.
 
-Sound emulation (speed up)
+## Sound emulation (speed up)
   You can also try to disable the sound through the setup utility of the game
   to reduce load on your CPU further. Setting nosound=true in DOSBox's
   configuration does NOT disable the emulation of sound devices, just
